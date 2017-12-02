@@ -31,6 +31,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       # t.datetime :locked_at
 
 
+      t.string :role
+      #用來作使用者/管理員admin的區別
+
+
       t.timestamps null: false
     end
 
