@@ -3,8 +3,9 @@
 <%= link_to '新增',new_admin_restaurant_path %>
 
 <ul>
-<% @allrestaurants.each do |r| %>
+<% @all_restaurants.each do |r| %>
 <li>
+	<%= r.name %>
 	<%= link_to '內容',admin_restaurants_path(r) %>
 	<%= link_to '編輯',edit_admin_restaurant_path(r) %>
 	<%= link_to '刪除',admin_restaurant_path(r), method: :delete, data: {confirm:"確定刪除？"} %>
