@@ -1,0 +1,18 @@
+<%= form_for  [:admin, @new_restaurant] do |r| %>
+  <%= r.label :name, "餐廳名字" %>
+  <%= r.text_field :name %>
+
+  <%= r.label :tel, "聯絡電話" %>
+  <%= r.text_field :tel %>
+
+  <%= r.label :address, "地址" %>
+  <%= r.text_field :address %>
+
+  <%= r.label :opening_hours, "營業時間" %>
+  <%= r.text_field :opening_hours %>
+
+  <%= r.label :description, "餐廳簡介" %>
+  <%= r.text_area :description %>
+
+  <%= r.submit %>
+<% end %>
