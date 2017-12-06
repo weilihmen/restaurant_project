@@ -57,3 +57,7 @@ gem 'devise'
 #管理使用者的gem
 
 gem 'carrierwave'
+#上傳照片
+
+gem 'ffaker'
+#假資料
