@@ -3,7 +3,7 @@ class Admin::RestaurantsController < ApplicationController
 	before_action	:authenticate_admin
 
 	def index
-		@all_restaurants=Restaurant.all
+		@all_restaurants=Restaurant.page(params[:page]).per(10)
 	end
 
 	def new

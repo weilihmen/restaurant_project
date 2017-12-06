@@ -61,3 +61,6 @@ gem 'carrierwave'
 
 gem 'ffaker'
 #假資料
+
+gem 'kaminari'
+#分頁功能
