@@ -14,5 +14,9 @@
   <%= r.label :description, "餐廳簡介" %>
   <%= r.text_area :description %>
 
+  <%= r.label :image, "上傳照片" %>
+  <%= image_tag @new_restaurant.image,width:'300px' if @new_restaurant.image? %>
+  <%= r.file_field :image %>
+
   <%= r.submit %>
 <% end %>
