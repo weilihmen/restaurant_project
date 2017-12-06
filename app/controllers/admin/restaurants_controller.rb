@@ -10,6 +10,10 @@ class Admin::RestaurantsController < ApplicationController
 		@new_restaurant=Restaurant.new
 	end
 
+  def show
+    @the_restaurant=Restaurant.find(params[:id])
+  end
+
 	def create
     @new_restaurant = Restaurant.new(restaurant_params) #實例變數必須和new相同，這樣才能回傳error訊息回去render
     if @new_restaurant.save
