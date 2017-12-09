@@ -2,15 +2,29 @@
 
 <%= link_to '新增',new_admin_restaurant_path %>
 
-<ul>
-<% @all_restaurants.each do |r| %>
-<li>
-	<%= r.name %>
-	<%= link_to '內容',admin_restaurant_path(r) %>
-	<%= link_to '編輯',edit_admin_restaurant_path(r) %>
-	<%= link_to '刪除',admin_restaurant_path(r), method: :delete, data: {confirm:"確定刪除？"} %>
-</li>
-<% end %>
-</ul>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @all_restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.id %></td>
+      <td>[<%= restaurant.category.name %>]</td>
+      <td><%= restaurant.name %></td>
+      <td>
+        <%= link_to 'Show', admin_restaurant_path(restaurant) %>
+        <%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %>
+        <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: { confirm: "Are you sure?"} %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= paginate @all_restaurants %>
