@@ -2,6 +2,8 @@
   <%= r.label :name, "餐廳名字" %>
   <%= r.text_field :name %>
 
+  <%= r.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: "form-control"} %>
+
   <%= r.label :tel, "聯絡電話" %>
   <%= r.text_field :tel %>
 
