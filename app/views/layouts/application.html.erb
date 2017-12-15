@@ -27,24 +27,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <% if current_user %>
-    					  <a heref="#">Hi, <%= current_user.email%></a>
-                    </li>
-                    <li>
-    					  <%= link_to('登出', destroy_user_session_path, {method: :delete}) %>
-                    </li>
-                    <li>
-    					  <%= link_to('修改密碼', edit_user_registration_path) %>
-                    </li>
-    					<% else %>
-                    <li>
-    					  <%= link_to('註冊', new_user_registration_path) %>
-                    </li>
-                    <li>
-    					  <%= link_to('登入', new_user_session_path) %>
-                    </li>
-    					<% end %>
+                    <% if current_user %>
+    					<li><a heref="#">Hi, <%= current_user.email%></a></li>
+                        <li><%= link_to('登出', destroy_user_session_path, {method: :delete}) %></li>
+                        <li><%= link_to('修改密碼', edit_user_registration_path) %></li>
+    				<% else %>
+                        <li><%= link_to('註冊', new_user_registration_path) %></li>
+                        <li><%= link_to('登入', new_user_session_path) %></li>
+    				<% end %>
+                    <% if current_user.admin? %>
+                        <li><%= link_to '後台', admin_restaurants_path %></li>
+                    <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -58,7 +51,7 @@
         <div class="row">
             <div class="alert alert-success alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <%= notice %>
+                <%= notice %>
             </div>
         </div>
     </div>
@@ -69,7 +62,7 @@
         <div class="row">
             <div class="alert alert-danger alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <%= alert %>
+                <%= alert %>
             </div>
         </div>
     </div>
