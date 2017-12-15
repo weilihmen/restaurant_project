@@ -70,6 +70,6 @@ gem 'ffaker'
 gem 'kaminari'
 #分頁功能
 
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 gem 'jquery-rails'

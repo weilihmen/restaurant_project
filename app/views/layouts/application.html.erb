@@ -10,41 +10,26 @@
   </head>
 
   <body>
-    <!-- NAV: https://startbootstrap.com/template-overviews/landing-page/ (bootstrap3 version) -->
-  	<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <%= link_to('Best Restaurant', root_path, {class: "navbar-brand topnav"}) %>
-            </div>
-            
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <% if current_user %>
-    					<li><a heref="#">Hi, <%= current_user.email%></a></li>
-                        <li><%= link_to('登出', destroy_user_session_path, {method: :delete}) %></li>
-                        <li><%= link_to('修改密碼', edit_user_registration_path) %></li>
-    				<% else %>
-                        <li><%= link_to('註冊', new_user_registration_path) %></li>
-                        <li><%= link_to('登入', new_user_session_path) %></li>
-    				<% end %>
-                    <% if current_user.admin? %>
-                        <li><%= link_to '後台', admin_restaurants_path %></li>
-                    <% end %>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+    <!-- NAV: https://startbootstrap.com/template-overviews/landing-page/ (bootstrap4 version) -->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <%= link_to('Best Restaurant', root_path, {class: "navbar-brand"}) %>
+        <div class="navbar-right">
+        <% if current_user %>
+            <a heref="#">Hi, <%= current_user.email%></a>
+            <%= link_to('登出', destroy_user_session_path, {method: :delete, class: "btn btn-primary"}) %>
+            <%= link_to('修改密碼', edit_user_registration_path, {class: "btn btn-primary"}) %>
+        <% else %>
+            <%= link_to('註冊', new_user_registration_path, {class: "btn btn-primary"}) %>
+            <%= link_to('登入', new_user_session_path, {class: "btn btn-primary"}) %>
+        <% end %>
+        <% if current_user.admin? %>
+            <%= link_to '後台', admin_restaurants_path, {class: "btn btn-primary"} %>
+        <% end %>
         </div>
-        <!-- /.container -->
+      </div>
     </nav>
-    <div class="height_71">hide</div>
+
 
     <% if flash[:notice] %>
     <div class="container">
