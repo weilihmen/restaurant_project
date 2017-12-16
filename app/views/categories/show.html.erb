@@ -1,0 +1,14 @@
+<div <div class="container">
+	<h1> By Category </h1>
+	<div class="row category-row">
+		<div class="list-group">
+		<% @categories.each do |c| %>
+			<% classset ="list-group-item" %>
+			<% classset ="active list-group-item" if c==@category %>
+			<%= link_to c.name, category_path(c), {:class=> classset}%>
+		<%end%>
+		</div>
+	</div>
+	<%= render partial: "shared/restaurants" %>
+
+</div>
