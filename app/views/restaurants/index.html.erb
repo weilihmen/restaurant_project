@@ -8,5 +8,7 @@
 		</div>
 	</div>
 	<%= render partial: "shared/restaurants" %>
-
+	<div class="text-center">
+		<%= paginate @restaurants, theme: 'twitter-bootstrap-4' %>
+	</div>
 </div>
