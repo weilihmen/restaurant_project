@@ -1,7 +1,8 @@
 <h1>admin 新增餐廳 </h1>
 
-<% if @new_restaurant.errors.any? %> <% #好像不能用partial form %>
-<h2>錯誤訊息(@new_restaurant.errors.full_messages)</h2>
+<% if @new_restaurant.errors.any? %> 
+<!-- #好像不能用partial form  -->
+<h2>錯誤訊息(<%= @new_restaurant.errors.full_messages %>)</h2>
 <ul>
 <% @new_restaurant.errors.full_messages.each do |m| %>
 <li><%= m %></li>

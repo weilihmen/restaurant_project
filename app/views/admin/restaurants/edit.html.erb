@@ -1,7 +1,7 @@
 <h1>admin 編輯餐廳</h1>
 
 <% if @new_restaurant.errors.any? %>
-<h2>錯誤訊息(@new_restaurant.errors.full_messages)</h2>
+<h2>錯誤訊息(<%= @new_restaurant.errors.full_messages %>)</h2>
 <ul>
 <% @new_restaurant.errors.full_messages.each do |m| %>
 <li><%= m %></li>
