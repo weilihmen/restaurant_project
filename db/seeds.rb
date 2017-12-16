@@ -11,6 +11,7 @@ category_list.each do |c|
 	Category.create(name: c[:name])
 end
 
-User.create(email: "root@example.com", password: "12345678", role: "admin")
+User.create(email: "root@com", password: "root", role: "admin")
+User.create(email: "test@com", password: "test")
 
 puts"default Admin User and Category List"
