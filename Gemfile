@@ -69,6 +69,8 @@ gem 'ffaker'
 
 gem 'kaminari'
 #分頁功能
+gem 'bootstrap4-kaminari-views'
+#分頁功能配上bootstrap4
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 
