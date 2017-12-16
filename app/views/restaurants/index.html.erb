@@ -1,5 +1,12 @@
 <div <div class="container">
 	<h1> restaurant root </h1>
+	<div class="row category-row">
+		<div class="list-group">
+		<% @categories.each do |c| %>
+		<%= link_to c.name, category_path(c), {class: "list-group-item"}%>
+		<%end%>
+		</div>
+	</div>
 	<div class="row">
 	<% @restaurants.each do |r| %>
     <div class="col-lg-4 col-sm-6 portfolio-item">
