@@ -1,0 +1,48 @@
+
+
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <%= image_tag(@restaurant.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"intro-img img-fluid mb-3 mb-lg-0 rounded"}) %>
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-lower"><%= @restaurant.name %></span>
+        </h2>
+        <p class="mb-3"><%= @restaurant.description %></p>
+        <div class="intro-button mx-auto">
+          <a class="btn btn-primary btn-xl" href="#detail">Visit Us Today!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section cta" id="detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Details</span>
+          </h2>
+          <p class="mb-0">Tel:<%= @restaurant.tel %></p>
+          <p class="mb-0">Address:<%= @restaurant.address %></p>
+          <p class="mb-0">Opening hours:<%= @restaurant.opening_hours %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="comments-outter">
+    <% @restaurant.comments.each do |c| %>
+    <div class="comment-tittle">
+      <p>Comment from: <%= c.user.email %> (<%= c.updated_at %>) </p>
+    </div>
+    <div class="comment-text">
+    <%= c.content %>
+    </div>
+    <% end %>
+  </div>
+</div>
