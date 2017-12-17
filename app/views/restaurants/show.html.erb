@@ -36,15 +36,20 @@
 
 <div class="container">
   <div class="comments-outter">
-    <% @restaurant.comments.each do |c| %>
-    <div class="comment-tittle">
-      <p>Comment from: <%= c.user.email %> (<%=time_ago_in_words c.updated_at %>) </p>
-      <% if current_user.admin? %>
-      <%= link_to "Delete", restaurant_comment_path(@restaurant, c), {method: :delete, class:"btn"} %>
-      <% end %>
+    <div class="comments-outter-tittle">
+      <i class="fa fa-comments fa-2x" aria-hidden="true">  Comments</i>
     </div>
-    <div class="comment-text">
-    <%= c.content %>
+    <% @restaurant.comments.each do |c| %>
+    <div class="comment-box">
+      <div class="comment-tittle">
+        <p>Comment from: <%= c.user.email %> (<%=time_ago_in_words c.updated_at %>) </p>
+        <% if current_user.admin? %>
+        <%= link_to "Delete", restaurant_comment_path(@restaurant, c), {method: :delete, class:"btn"} %>
+        <% end %>
+      </div>
+      <div class="comment-text">
+        <%= c.content %>
+      </div>
     </div>
     <% end %>
     <%= form_for [@restaurant, @comment] do |f| %>

@@ -2,7 +2,19 @@
 	position: relative;
 }
 
+body{
+	background-color: #E3E3E3;
+}
+
+.margin-10-10{
+	margin: 10px 10px;
+}
+
 /* restaurant index */
+
+.bgc-white{
+	background-color: #fff;
+}
 
 .category-row{
 	padding:30px 10px;
@@ -65,8 +77,6 @@
 }
 
 .cta {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
   background-color: rgba(230, 167, 86, 0.9);
 }
 
@@ -93,14 +103,22 @@
 
 .comments-outter{
 	padding: 20px 100px;
+	background-color: white;
+	margin: 0px 50px;
+}
+
+.comments-outter-tittle{
+	margin-bottom: 50px;
+}
+
+.comment-box{
+	border-radius: 8px;
+	background-color: white;
 }
 
 .comment-tittle{
 	margin: 0 50px;
 	min-height: 50px;
-	background-color: grey;
-	border: 2px solid grey;
-	border-radius: 8px;
 }
 
 .comment-tittle p{
@@ -109,11 +127,8 @@
 
 .comment-text{
 	margin: 0 50px;
+	padding-left: 10px;
 	min-height: 50px;
-	background-color:  grey;
-	border: 2px solid grey;
-	border-radius: 8px;
-	vertical-align: middle;
 }
 .comment-form{
 	margin: 0 50px;

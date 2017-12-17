@@ -1,4 +1,4 @@
-<div <div class="container">
+<div <div class="container bgc-white">
 	<h1> restaurant root </h1>
 	<div class="row category-row">
 		<div class="list-group">
@@ -8,7 +8,8 @@
 		</div>
 	</div>
 	<%= render partial: "shared/restaurants" %>
-	<div class="text-center">
+	<div class="text-center margin-10-10">
 		<%= paginate @restaurants, theme: 'twitter-bootstrap-4' %>
 	</div>
+	<div style="height:1px;"></div>
 </div>
