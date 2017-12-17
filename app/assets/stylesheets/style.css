@@ -97,10 +97,14 @@
 
 .comment-tittle{
 	margin: 0 50px;
-	height: 50px;
+	min-height: 50px;
 	background-color: grey;
 	border: 2px solid grey;
 	border-radius: 8px;
+}
+
+.comment-tittle p{
+	display: inline-block;
 }
 
 .comment-text{
