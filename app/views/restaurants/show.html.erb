@@ -52,7 +52,7 @@
       </div>
     </div>
     <% end %>
-    <%= form_for [@restaurant, @comment] do |f| %>
+    <%= form_for [@restaurant,@comment] do |f| %>
     <div class="form-group comment-form">
       <%= f.text_area :content, placeholder: "留個言吧", class: "form-control" %>
       <%= f.submit class: "btn btn-primary" %>
