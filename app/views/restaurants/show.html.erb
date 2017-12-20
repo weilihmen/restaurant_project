@@ -10,7 +10,7 @@
         </h2>
         <p class="mb-3"><%= @restaurant.description %></p>
         <div class="intro-button mx-auto">
-          <a class="btn btn-primary btn-xl" href="#detail">Visit Us Today!</a>
+          <%= link_to "Favorite", restaurant_favorites_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
         </div>
       </div>
     </div>
