@@ -17,6 +17,7 @@
         <div class="navbar-right">
         <% if current_user %>
             <a heref="#">Hi, <%= current_user.email%></a>
+            <%= link_to('Profile', user_path(current_user), {class: "btn btn-primary"}) %>
             <%= link_to('登出', destroy_user_session_path, {method: :delete, class: "btn btn-primary"}) %>
             <%= link_to('修改密碼', edit_user_registration_path, {class: "btn btn-primary"}) %>
         <% else %>
