@@ -1,8 +1,16 @@
 <p>works!</p>
 <p><%= @user.email%>,with id: <%=@user.id%></p>
 <p>
+	<p>commented</p>
 	<% @comments.each do |c| %>
 	<%= c.restaurant.name %>
+	<br>
+	<%end%>
+</p>
+<p>
+	<p>favorite</p>
+	<% @user.restaurants.each do |r| %>
+	<%= r.name%>
 	<br>
 	<%end%>
 </p>
