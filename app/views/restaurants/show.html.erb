@@ -1,5 +1,3 @@
-
-
 <section class="page-section clearfix">
   <div class="container">
     <div class="intro">
@@ -10,7 +8,11 @@
         </h2>
         <p class="mb-3"><%= @restaurant.description %></p>
         <div class="intro-button mx-auto">
-          <%= link_to "Favorite", restaurant_favorites_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
+          <%if @favorite_check==:False %>
+          <%= link_to "加入最愛！", restaurant_favorites_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
+          <%else %>
+          <%= link_to "取消最愛！", restaurant_favorite_path(@restaurant, @favorite), {method: :delete, class:"btn btn-primary btn-xl"} %>
+          <%end%>
         </div>
       </div>
     </div>

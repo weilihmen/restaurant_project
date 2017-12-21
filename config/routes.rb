@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root"restaurants#index"
   resources :restaurants, only: [:index, :show] do
   	resources :comments, only: [:create, :destroy]
-    resources :favorites, only: [:create]
+    resources :favorites, only: [:create, :destroy]
   end
   resources :categories, only: [:show]
   resources :users, only: [:show, :edit, :update]
