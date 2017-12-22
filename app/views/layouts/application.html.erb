@@ -32,7 +32,9 @@
     </nav>
 
 
-    <% if flash[:notice] %>
+    
+    <div class="container bgc-white">
+        <% if flash[:notice] %>
     <div class="container">
         <div class="row">
             <div class="alert alert-success alert-dismissible" role="alert">
@@ -53,7 +55,7 @@
         </div>
     </div>
     <% end %>
-
-    <%= yield %>
+        <%= yield %>
+    </div>
   </body>
 </html>

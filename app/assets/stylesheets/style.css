@@ -98,6 +98,10 @@ body{
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
 }
 
+.margin-4{
+  margin:0px -15px;
+}
+
 /* end here */
 /* restaurant show comment */
 
@@ -138,3 +142,4 @@ body{
 .alert_mes{
   margin-right: 20px;
 }
+
