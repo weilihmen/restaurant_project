@@ -1,19 +1,13 @@
 class UsersController < ApplicationController
-	before_action :check_user, only: [:show, :edit, :update]
+
 
 	def show
 		@user=User.find(params[:id])
 		@comments=@user.comments
 	end
-	def edit
-		@user=User.find(params[:id])
-	end
-	def update
-		@user=User.find(params[:id])
-	end
 
 	private
-	def check_user
+	def check_user #把edit功能併進去devise 就不用這個功能了
 		if User.exists?(:id => params[:id])
 			if current_user != User.find(params[:id])
 		 		redirect_to root_path, alert: "Dont do things illegal"

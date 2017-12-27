@@ -1,13 +1,24 @@
-
-	<h1> By Category </h1>
-	<div class="row category-row">
-		<div class="list-group">
-		<% @categories.each do |c| %>
-			<% classset ="list-group-item" %>
-			<% classset ="active list-group-item" if c==@category %>
-			<%= link_to c.name, category_path(c), {:class=> classset}%>
-		<%end%>
-		</div>
+	<div class="tab-bar">
+		<ul class="nav nav-tabs nav-tabs-main">
+  		<li class="nav-item">
+  			<%= link_to "所有餐廳", restaurants_path, class: "#{cp(restaurants_path)} nav-link" %>
+  		</li>
+  		<li class="nav-item">
+  			<%= link_to "餐廳分類", category_path(@categories.first), class: "active nav-link" %>
+  		</li>
+  		<li class="nav-item">
+  			<a class="nav-link" href="#">Feeds</a>
+  		</li>
+		</ul>
+	</div>
+	<div class="tab-bar">
+		<ul class="nav nav-tabs nav-tabs-scd">
+			<% @categories.each do |c| %>
+  		<li class="nav-item">
+  			<%= link_to c.name, category_path(c), class: "#{cp(category_path(c))} nav-link"%>
+  		</li>
+  		<%end%>
+		</ul>
 	</div>
 	<%= render partial: "shared/restaurants" %>
 	<div class="text-center margin-10-10">

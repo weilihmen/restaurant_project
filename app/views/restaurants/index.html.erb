@@ -1,11 +1,15 @@
-
-	<h1> restaurant root </h1>
-	<div class="row category-row">
-		<div class="list-group">
-		<% @categories.each do |c| %>
-		<%= link_to c.name, category_path(c), {class: "list-group-item"}%>
-		<%end%>
-		</div>
+	<div class="tab-bar">
+		<ul class="nav nav-tabs nav-tabs-main">
+  		<li class="nav-item">
+  			<%= link_to "所有餐廳", restaurants_path, class: "#{cp(restaurants_path)} nav-link" %>
+  		</li>
+  		<li class="nav-item">
+  			<%= link_to "餐廳分類", category_path(@categories.first), class: " nav-link" %>
+  		</li>
+  		<li class="nav-item">
+  			<a class="nav-link" href="#">Feeds</a>
+  		</li>
+		</ul>
 	</div>
 	<%= render partial: "shared/restaurants" %>
 	<div class="text-center margin-10-10">
