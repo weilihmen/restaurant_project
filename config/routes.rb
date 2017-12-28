@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
   end
   resources :categories, only: [:show]
+  resources :feeds, only: [:show]
   resources :users, only: [:show, :edit, :update]
   namespace :admin do
   	resources :restaurants
