@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show] do
   	resources :comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
+    get :feeds, :on => :collection
   end
   resources :categories, only: [:show]
-  resources :feeds, only: [:show]
   resources :users, only: [:show, :edit, :update]
   namespace :admin do
   	resources :restaurants
