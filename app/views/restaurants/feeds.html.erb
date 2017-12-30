@@ -1,19 +1,40 @@
-<div>
-  <h3>最新餐廳</h3>
-  <% @recent_restaurants.each do |restaurant| %>
-  <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
-  <p><%= restaurant.category.name %></p>
-  <p><%= restaurant.description %></p>
-  <hr>
-  <% end %>
-</div>
+  <div class="tab-bar">
+    <ul class="nav nav-tabs nav-tabs-main">
+      <li class="nav-item">
+        <%= link_to "所有餐廳", restaurants_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "餐廳分類", category_path(@categories.first), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "feeds", feeds_restaurants_path, class: "active nav-link" %>
+      </li>
+    </ul>
+  </div>
 
-<div>
-  <h3>最新評論</h3>
-  <% @recent_comments.each do |comment| %>
-  <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
-  <p><%= comment.content %></p>
-  <p>by <%= link_to comment.user.name, user_path(comment.user) %></p>
-  <hr>
-  <% end %>
+<div class="row">
+  <div class="col-xl-4">
+    <h3>最新餐廳</h3>
+    <% @recent_restaurants.each do |restaurant| %>
+    <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+    <p><%= restaurant.category.name %></p>
+    <p><%= restaurant.description %></p>
+    <hr>
+    <% end %>
+  </div>
+
+  <div class="col-xl-4">
+    <h3>最新評論</h3>
+    <% @recent_comments.each do |comment| %>
+    <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
+    <p><%= comment.content %></p>
+    <p>by <%= link_to comment.user.name, user_path(comment.user) %></p>
+    <hr>
+    <% end %>
+  </div>
+
+  <div class="col-xl-4">
+    <h3>人氣top10</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni numquam sunt nesciunt cupiditate provident odit minus quod maxime omnis excepturi.</p>
+  </div>
 </div>
