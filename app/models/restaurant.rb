@@ -8,5 +8,6 @@ class Restaurant < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	#喜歡
 	has_many :likes, dependent: :destroy
+	has_many :liked_users, through: :likes, source: :user
 
 end

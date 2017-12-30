@@ -15,27 +15,46 @@ namespace :dev do
     puts "created 500 fake restaurants"
   end
 
-  task fake_user: :environment do
+  task fake_20users: :environment do
     20.times do |i|
       user_name = FFaker::Name.first_name
       User.create!(
-        email: "#{user_name}@example.com",
+        email: "#{user_name}@com",
         password: "12345678"
       )
     end
     puts "create 20 fake users"
   end
 
-  task fake_comment: :environment do
-    Restaurant.all.each do |restaurant|
-      3.times do |i|
-        restaurant.comments.create!(
+  task fake_50comments: :environment do
+    50.times do |i|
+        Comment.create!(
           content: FFaker::Lorem.sentence,
-          user: User.all.sample
+          user: User.all.sample,
+          restaurant: Restaurant.all.sample
         )
-      end
     end
-    puts "create 3 fake comments"
+    puts "create random 50 fake comments"
+  end
+
+  task fake_50favorites: :environment do
+    50.times do |i|
+        Favorite.create!(
+          user: User.all.sample,
+          restaurant: Restaurant.all.sample
+        )
+    end
+    puts "create random 50 fake favorites"
+  end
+
+  task fake_50likes: :environment do
+    50.times do |i|
+        Like.create!(
+          user: User.all.sample,
+          restaurant: Restaurant.all.sample
+        )
+    end
+    puts "create random 50 fake likes"
   end
 
 end

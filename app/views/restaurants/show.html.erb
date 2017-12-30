@@ -12,6 +12,11 @@
           <%else %>
           <%= link_to "取消最愛！", restaurant_favorite_path(@restaurant, @favorite), {method: :delete, class:"btn btn-primary btn-xl"} %>
           <%end%>
+          <%if @restaurant.liked_users.include?(current_user) %>
+          <%= link_to "取消追蹤！", unlike_restaurant_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
+          <%else %>
+          <%= link_to "追蹤！", like_restaurant_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
+          <%end%>
         </div>
       </div>
     </div>

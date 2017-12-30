@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
 	end
 	def destroy
 		@restaurant=Restaurant.find(params[:restaurant_id])
-		@favorite=Favorite.where( :restaurant_id => @restaurant.id, :user_id => current_user.id )
+		@favorite=Favorite.where(:restaurant_id => @restaurant.id, :user_id => current_user.id )
 		@favorite.destroy_all
 		redirect_to restaurant_path(@restaurant)
 	end

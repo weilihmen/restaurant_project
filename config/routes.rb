@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   	resources :comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
     get :feeds, :on => :collection
+    member do
+      post :like
+      post :unlike
+    end
   end
   resources :categories, only: [:show]
   resources :users, only: [:show, :edit, :update]

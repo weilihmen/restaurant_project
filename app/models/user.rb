@@ -11,7 +11,7 @@ class User < ApplicationRecord
   #透過收藏 取得餐廳 User.restarants
   has_many :restaurants, through: :favorites
   #喜歡
-  hes_many :likes, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :liked_restaurants, through: :likes, source: :restaurant
   #使用source更名，可以直接讀取 User.liked_restaurants
 
