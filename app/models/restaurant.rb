@@ -10,6 +10,13 @@ class Restaurant < ApplicationRecord
 	has_many :likes, dependent: :destroy
 	has_many :liked_users, through: :likes, source: :user
 
-
+	def rank_count
+		#rank由 favorite 跟 like 相加，之後也可以加入comment
+		count=self.favorites.size
+		count=count+self.likes.size
+		#count=count+self.comments.size
+		self.rank=count
+		self.save
+	end
 
 end

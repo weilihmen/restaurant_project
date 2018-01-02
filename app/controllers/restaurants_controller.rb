@@ -18,17 +18,20 @@ class RestaurantsController < ApplicationController
 		@categories=Category.all
     @recent_restaurants = Restaurant.order(created_at: :desc).limit(10)
     @recent_comments = Comment.order(created_at: :desc).limit(10)
+    @ranks = Restaurant.order(rank: :desc).limit(10)
   end
 
   def like
     @restaurant = Restaurant.find(params[:id])
     @restaurant.likes.create!(user: current_user)
+    @restaurant.rank_count
     redirect_back(fallback_location: root_path)  # 導回上一頁
   end
   def unlike
     @restaurant = Restaurant.find(params[:id])
     like = Like.where(restaurant: @restaurant, user: current_user)
     like.destroy_all
+    @restaurant.rank_count
     redirect_back(fallback_location: root_path)
   end
 end

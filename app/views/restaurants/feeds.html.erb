@@ -34,7 +34,11 @@
   </div>
 
   <div class="col-xl-4">
-    <h3>人氣top10</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni numquam sunt nesciunt cupiditate provident odit minus quod maxime omnis excepturi.</p>
+    <% @ranks.each do |rank| %>
+    <h4><%= link_to rank.name, restaurant_path(rank) %></h4>
+    <p><%= rank.category.name %></p>
+    <p><%= rank.description %></p>
+    <hr>
+    <% end %>
   </div>
 </div>
