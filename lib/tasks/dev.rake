@@ -57,4 +57,14 @@ namespace :dev do
     puts "create random 50 fake likes"
   end
 
+  task fake_20follow: :environment do
+    20.times do |i|
+      Followship.create!(
+        user: User.all.sample,
+        following: User.all.sample
+        )
+    end
+    puts "create random 20 fake follow"
+  end
+
 end
