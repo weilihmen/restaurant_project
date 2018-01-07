@@ -1,32 +1,72 @@
+<h1>Profile</h1>
 <div class="row">
-	<div class="col-lg-4">
-		<h1>Profile</h1>
-		<div class="avatar-holder">
-			<%= image_tag(@user.avatar, {class:"avatar-round"})%>
+	<div class="col-md-4">
+		<div class="avatar-width paddint-top-10">
+			<div class="avatar-height">
+				<div class="avatar-position">
+					<%= image_tag(@user.avatar, {class:"avatar-fit"})%>
+				</div>
+			</div>
 		</div>
-		<div class="intro-holder">
-			<h3><% @user.name if @user.name%></h3>
-			<p>Email: <%= @user.email%></p>
-			<div>Intro: <%= @user.intro%></div>			
-		</div>
-		<h1>Follows</h1>
 	</div>
-	<div class="col-lg-8">
-		<h2>Commented</h2>
+	<div class="col-md-6">
+		<div class="intro-holder">
+			<h3><%= @user.name if @user.name%></h3>
+			<p>Intro: <%= @user.intro%></p>
+		</div>
+	</div>
+
+  <div class="col-lg-12" style="height: 50px;"></div>
+	<div class="col-md-6">
+		<h3>Followers</h3>
 		<div class="row">
-			<% @comments.each do |c| %>
-			<div class="col-lg-2 text-center mb-4">
-				<%= link_to image_tag(c.restaurant.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"rounded-circle img-fluid d-block mx-auto"}), restaurant_path(c.restaurant), {} %>
-				<h3><small><%= c.restaurant.name %></small></h3>
+			<% @followers.each do |c| %>
+			<div class="col-2 mb-4">
+				<div class="profile-pic-height">
+					<%= link_to image_tag(c.avatar, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"profile-pic-fit img-fluid d-block mx-auto"}), user_path(c), {class:"profile-pic-position"} %>
+				</div>
+				<%= link_to c.name, user_path(c), {style:"font-size:20px;"}%>
 			</div>
 			<%end%> 
 		</div>
-		<h2>Favorite</h2>
+	</div>
+	<div class="col-md-6">
+		<h3>Followings</h3>
+		<div class="row">
+			<% @followings.each do |c| %>
+			<div class="col-2 mb-4">
+				<div class="profile-pic-height">
+					<%= link_to image_tag(c.avatar, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"profile-pic-fit img-fluid d-block mx-auto"}), user_path(c), {class:"profile-pic-position"} %>
+				</div>
+				<%= link_to c.name, user_path(c), {style:"font-size:20px;"}%>
+			</div>
+			<%end%> 
+		</div>
+	</div>
+
+	<div class="col-lg-12" style="height: 50px;"></div>
+	<div class="col-md-6">
+		<h3>Commented</h3>
+		<div class="row">
+			<% @comments.each do |c| %>
+			<div class="col-2 mb-4">
+				<div class="profile-pic-height">
+					<%= link_to image_tag(c.restaurant.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"profile-pic-fit img-fluid d-block mx-auto"}), restaurant_path(c.restaurant), {class:"profile-pic-position"} %>
+				</div>
+				<%= link_to c.restaurant.name, restaurant_path(c.restaurant), {style:"font-size:20px;"}%>
+			</div>
+			<%end%> 
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h3>Favorite</h3>
 		<div class="row">
 			<% @user.restaurants.each do |r| %>
-			<div class="col-lg-2 text-center mb-4">
-				<%= link_to image_tag(r.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"rounded-circle img-fluid d-block mx-auto"}), restaurant_path(r), {} %>
-				<h3><small><%= r.name %></small></h3>
+			<div class="col-2 mb-4">
+				<div class="profile-pic-height">
+					<%= link_to image_tag(r.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"profile-pic-fit img-fluid d-block mx-auto"}), restaurant_path(r), {class:"profile-pic-position"} %>
+				</div>
+				<%= link_to r.name, restaurant_path(r), {style:"font-size:20px;"}%>
 			</div>
 			<%end%> 
 		</div>

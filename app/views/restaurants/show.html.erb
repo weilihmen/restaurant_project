@@ -8,14 +8,14 @@
         <p class="mb-3"><%= @restaurant.description %></p>
         <div class="intro-button mx-auto">
           <%if @favorite_check==:False %>
-          <%= link_to "加入最愛！", restaurant_favorites_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
+          <%= link_to "加入最愛！", restaurant_favorites_path(@restaurant), {method: :post, class:"btn btn-secondary btn-xl"} %>
           <%else %>
-          <%= link_to "取消最愛！", restaurant_favorite_path(@restaurant, @favorite), {method: :delete, class:"btn btn-primary btn-xl"} %>
+          <%= link_to "取消最愛！", restaurant_favorite_path(@restaurant, @favorite), {method: :delete, class:"btn btn-secondary btn-xl"} %>
           <%end%>
           <%if @restaurant.liked_users.include?(current_user) %>
-          <%= link_to "取消追蹤！", unlike_restaurant_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
+          <%= link_to "取消追蹤！", unlike_restaurant_path(@restaurant), {method: :post, class:"btn btn-secondary btn-xl"} %>
           <%else %>
-          <%= link_to "追蹤！", like_restaurant_path(@restaurant), {method: :post, class:"btn btn-primary btn-xl"} %>
+          <%= link_to "追蹤！", like_restaurant_path(@restaurant), {method: :post, class:"btn btn-secondary btn-xl"} %>
           <%end%>
         </div>
       </div>

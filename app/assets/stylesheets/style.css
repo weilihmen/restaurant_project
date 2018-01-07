@@ -10,6 +10,10 @@ body{
 	margin: 10px 10px;
 }
 
+.paddint-top-10{
+  padding-top: 10px;
+}
+
 /* restaurant index */
 
 .bgc-white{
@@ -46,13 +50,33 @@ body{
 }
 
 .card-picture{
-	max-width: 100%;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
 }
 
 .badge-position{
   position: absolute;
   right:15px;
   bottom: 15px;
+}
+
+.card-pic-width{
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-pic-height{
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.card-pic-position{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left: 0;
 }
 
 /* restaurant show template
@@ -164,15 +188,103 @@ body{
 }
 
 /* user show html */
-.avatar-holder{
-  text-align: center;
+
+.avatar-fit{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
 }
+
+.avatar-height{
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.avatar-width{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.avatar-position{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
 .avatar-round{
   max-width:50%;
   border-radius: 40%;
 }
 .intro-holder{
-  padding-left: 20px;
-  margin-top: 20px;
+  position: absolute;
+  top:20%;
+}
+
+@media (max-width: 768px){
+  .intro-holder{
+  position: relative;
+  }
+}
+
+.profile-pic-fit{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.profile-pic-height{
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.profile-pic-position{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+
+/*feeds*/
+.feeds-block{
+  border-bottom: 5px solid lightgrey;
+  margin-bottom: 10px;
+}
+.feeds-name{
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+}
+.feeds-intro{
+  height: 50px;
+}
+.feeds-intro p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5px;
+  padding-top: 10px;
+}
+
+.feeds-pic-fit{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.feeds-pic-height{
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.feeds-pic-position{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left: 0;
 }
 

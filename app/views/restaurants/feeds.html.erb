@@ -16,32 +16,63 @@
   </div>
 
 <div class="row">
-  <div class="col-xl-4">
+  <div class="col-lg-4 col-sm-10">
     <h3>最新餐廳</h3>
     <% @recent_restaurants.each do |restaurant| %>
-    <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
-    <p><%= restaurant.category.name %></p>
-    <p><%= restaurant.description %></p>
-    <hr>
-    <% end %>
+      <div class="feeds-block">
+        <div class="row">
+          <div class="col-lg-6 col-sm-10">
+            <div class="feeds-pic-height">
+              <%= link_to image_tag(restaurant.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"feeds-pic-fit img-fluid mb-3 mb-lg-0 rounded"}), restaurant_path(restaurant), {class:"feeds-pic-position"} %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-10">
+            <div class="feeds-name">
+                <p><%= restaurant.name %></p>
+                加入最愛、保持追蹤
+            </div>
+          </div>
+        </div>
+        <div class="feeds-intro">
+          <p><%= restaurant.description %></p>
+        </div>
+      </div>
+    <% end %> 
   </div>
 
-  <div class="col-xl-4">
+  <div class="col-lg-4 col-sm-10">
+    <h3>熱門餐廳</h3>
+    <% @ranks.each do |restaurant| %>
+      <div class="feeds-block">
+        <div class="row">
+          <div class="col-lg-6 col-sm-10">
+            <div class="feeds-pic-height">
+              <%= link_to image_tag(restaurant.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"feeds-pic-fit img-fluid mb-3 mb-lg-0 rounded"}), restaurant_path(restaurant), {class:"feeds-pic-position"} %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-10">
+            <div class="feeds-name">
+                <p><%= restaurant.name %></p>
+                加入最愛、保持追蹤
+            </div>
+          </div>
+        </div>
+        <div class="feeds-intro">
+          <p><%= restaurant.description %></p>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+
+  <div class="col-lg-4 col-sm-10">
     <h3>最新評論</h3>
     <% @recent_comments.each do |comment| %>
+    <div class="feeds-block">
     <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
     <p><%= comment.content %></p>
     <p>by <%= link_to comment.user.name, user_path(comment.user) %></p>
-    <hr>
+    </div>
     <% end %>
   </div>
 
-  <div class="col-xl-4">
-    <% @ranks.each do |rank| %>
-    <h4><%= link_to rank.name, restaurant_path(rank) %></h4>
-    <p><%= rank.category.name %></p>
-    <p><%= rank.description %></p>
-    <hr>
-    <% end %>
-  </div>
 </div>

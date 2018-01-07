@@ -2,9 +2,11 @@
 	<% @restaurants.each do |r| %>
     <div class="col-lg-4 col-sm-6 portfolio-item">
       <div class="card h-100">
-        <div>
-        <%= link_to image_tag(r.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class: "card-picture"}), restaurant_path(r), {} %>
-        <span class="badge badge-secondary badge-position" style="font-size: 15px;"><%=r.category.name%></span>
+        <div class="card-pic-width">
+          <div class="card-pic-height">
+            <%= link_to image_tag(r.image, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class: "card-picture"}), restaurant_path(r), {class: "card-pic-position"} %>
+            <span class="badge badge-secondary badge-position" style="font-size: 15px;"><%=r.category.name%></span>
+          </div>
         </div>
         <div class="card-body">
           <h4 class="card-title">
