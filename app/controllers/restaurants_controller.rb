@@ -21,6 +21,7 @@ class RestaurantsController < ApplicationController
     @ranks = Restaurant.order(rank: :desc).limit(10)
   end
   def experts
+  	@categories=Category.all
   	@most_comments=User.joins(:comments).group("users.id").order("count(users.id) DESC").limit(5)
   	@your_followings=current_user.followings
   end

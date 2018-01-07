@@ -1,3 +1,20 @@
+  <div class="tab-bar">
+    <ul class="nav nav-tabs nav-tabs-main">
+      <li class="nav-item">
+        <%= link_to "所有餐廳", restaurants_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "餐廳分類", category_path(@categories.first), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "最新動態", feeds_restaurants_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "美食達人", experts_restaurants_path, class: "active nav-link" %>
+      </li>
+    </ul>
+  </div>
+
 <h1>擁有最多留言</h1>
 	<% @most_comments.each do |e| %>
 	<%= e.name %>
