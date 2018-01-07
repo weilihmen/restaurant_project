@@ -17,10 +17,10 @@
 				<%if current_user.followings.exists?(:id => @user.id) %>
 					<%= link_to "取消追蹤！", followship_path(@user), {method: :delete, class:"btn btn-secondary btn-xl"} %>
         <%else%>
-        	<%= link_to "追蹤達人！", followships_path(following_id: @user), {method: :post, class:"btn btn-secondary btn-xl"} %>
+        	<%= link_to "追蹤達人！", followships_path(following_id: @user), {method: :post, class:"btn btn-info btn-xl"} %>
         <%end%>
       <% else %>
-        <%= link_to "編輯", edit_user_registration_path, {method: :get, class:"btn btn-secondary btn-xl"} %>
+        <%= link_to "編輯", edit_user_registration_path, {method: :get, class:"btn btn-primary btn-xl"} %>
       <%end%>
 		</div>
 	</div>

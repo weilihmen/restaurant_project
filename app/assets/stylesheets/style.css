@@ -288,3 +288,43 @@ body{
   left: 0;
 }
 
+/*experts*/
+
+.experts-block{
+  border-bottom: 5px solid lightgrey;
+  margin-bottom: 10px;
+}
+.experts-name{
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+}
+.experts-intro{
+  height: 50px;
+}
+.experts-intro p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5px;
+  padding-top: 10px;
+}
+
+.experts-pic-fit{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.experts-pic-height{
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.experts-pic-position{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left: 0;
+}

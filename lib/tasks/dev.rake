@@ -1,6 +1,6 @@
 namespace :dev do
   
-  task fake_restaurants: :environment do
+  task fake_50restaurants: :environment do
     Restaurant.destroy_all
 
     500.times do |i|
@@ -19,10 +19,11 @@ namespace :dev do
     20.times do |i|
       user_name = FFaker::Name.first_name
       User.create!(
-        name: FFaker::Name.first_name,
-        intro: FFaker::Lorem.paragraph,
+        name: "#{user_name}",
+        intro: FFaker::Lorem.sentence,
         email: "#{user_name}@com",
-        password: "12345678"
+        password: "12345678",
+        avatar: FFaker::Avatar.image
       )
     end
     puts "create 20 fake users"
@@ -59,14 +60,14 @@ namespace :dev do
     puts "create random 50 fake likes"
   end
 
-  task fake_20follow: :environment do
+  task fake_20follows: :environment do
     20.times do |i|
       Followship.create!(
         user: User.all.sample,
         following: User.all.sample
         )
     end
-    puts "create random 20 fake follow"
+    puts "create random 20 fake follows"
   end
 
 end

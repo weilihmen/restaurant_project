@@ -15,12 +15,70 @@
     </ul>
   </div>
 
-<h1>擁有最多留言</h1>
-	<% @most_comments.each do |e| %>
-	<%= e.name %>
-	<%end%>
+<div class="row">
+  <div class="col-lg-4 col-sm-10">
+    <h3>最多留言</h3>
+    <% @most_comments.each do |u| %>
+      <div class="experts-block">
+        <div class="row">
+          <div class="col-lg-6 col-sm-10">
+            <div class="experts-pic-height">
+              <%= link_to image_tag(u.avatar, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"experts-pic-fit img-fluid mb-3 mb-lg-0 rounded"}), user_path(u), {class:"experts-pic-position"} %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-10">
+            <div class="experts-name">
+                <p><%= u.name %></p>
+                <%if not u==current_user %>
+                  <%if current_user.followings.exists?(:id => u.id) %>
+                    <%= link_to "取消追蹤！", followship_path(u), {method: :delete, class:"btn btn-secondary btn-sm"} %>
+                  <%else%>
+                    <%= link_to "追蹤達人！", followships_path(following_id: u), {method: :post, class:"btn btn-info btn-sm"} %>
+                  <%end%>
+                <% else %>
+                  <%= link_to "編輯", edit_user_registration_path, {method: :get, class:"btn btn-primary btn-sm"} %>
+                <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="experts-intro">
+          <p><%= u.intro %></p>
+        </div>
+      </div>
+    <% end %> 
+  </div>
 
-<h1>我所追蹤</h1>
-	<% @your_followings.each do |e| %>
-	<%= e.name %>
-	<%end%>
+    <div class="col-lg-4 col-sm-10">
+    <h3>我的追蹤</h3>
+    <% @your_followings.each do |u| %>
+      <div class="experts-block">
+        <div class="row">
+          <div class="col-lg-6 col-sm-10">
+            <div class="experts-pic-height">
+              <%= link_to image_tag(u.avatar, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"experts-pic-fit img-fluid mb-3 mb-lg-0 rounded"}), user_path(u), {class:"experts-pic-position"} %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-10">
+            <div class="experts-name">
+                <p><%= u.name %></p>
+                <%if not u==current_user %>
+                  <%if current_user.followings.exists?(:id => u.id) %>
+                    <%= link_to "取消追蹤！", followship_path(u), {method: :delete, class:"btn btn-secondary btn-sm"} %>
+                  <%else%>
+                    <%= link_to "追蹤達人！", followships_path(following_id: u), {method: :post, class:"btn btn-info btn-sm"} %>
+                  <%end%>
+                <% else %>
+                  <%= link_to "編輯", edit_user_registration_path, {method: :get, class:"btn btn-primary btn-sm"} %>
+                <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="experts-intro">
+          <p><%= u.intro %></p>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+
+</div>
+
