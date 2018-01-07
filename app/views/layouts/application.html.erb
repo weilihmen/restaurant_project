@@ -18,7 +18,7 @@
         <% if current_user %>
             <a heref="#">Hi, <%= current_user.email%></a>
             <%= link_to('個人檔案', user_path(current_user), {class: "btn btn-outline-secondary"}) %>
-            <%= link_to('修改密碼', edit_user_registration_path, {class: "btn btn-outline-secondary"}) %>
+            <%= link_to('修改資料', edit_user_registration_path, {class: "btn btn-outline-secondary"}) %>
             <%= link_to('登出', destroy_user_session_path, {method: :delete, class: "btn btn-outline-secondary"}) %>
         <% else %>
             <%= link_to('註冊', new_user_registration_path, {class: "btn btn-outline-secondary"}) %>

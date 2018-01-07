@@ -13,6 +13,15 @@
 		<div class="intro-holder">
 			<h3><%= @user.name if @user.name%></h3>
 			<p>Intro: <%= @user.intro%></p>
+			<%if not @user==current_user %>
+				<%if current_user.followings.exists?(:id => @user.id) %>
+					<%= link_to "取消追蹤！", followship_path(@user), {method: :delete, class:"btn btn-secondary btn-xl"} %>
+        <%else%>
+        	<%= link_to "追蹤達人！", followships_path(following_id: @user), {method: :post, class:"btn btn-secondary btn-xl"} %>
+        <%end%>
+      <% else %>
+        <%= link_to "編輯", edit_user_registration_path, {method: :get, class:"btn btn-secondary btn-xl"} %>
+      <%end%>
 		</div>
 	</div>
 
