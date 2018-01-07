@@ -4,7 +4,7 @@ namespace :dev do
     Restaurant.destroy_all
 
     500.times do |i|
-      Restaurant.create!(name: FFaker::Name.first_name,
+      Restaurant.create(name: FFaker::Name.first_name,
         opening_hours: FFaker::Time.datetime,
         tel: FFaker::PhoneNumber.short_phone_number,
         address: FFaker::Address.street_address,
@@ -18,7 +18,7 @@ namespace :dev do
   task fake_20users: :environment do
     20.times do |i|
       user_name = FFaker::Name.first_name
-      User.create!(
+      User.create(
         name: "#{user_name}",
         intro: FFaker::Lorem.sentence,
         email: "#{user_name}@com",
@@ -31,7 +31,7 @@ namespace :dev do
 
   task fake_50comments: :environment do
     50.times do |i|
-        Comment.create!(
+        Comment.create(
           content: FFaker::Lorem.sentence,
           user: User.all.sample,
           restaurant: Restaurant.all.sample
@@ -42,7 +42,7 @@ namespace :dev do
 
   task fake_50favorites: :environment do
     50.times do |i|
-        Favorite.create!(
+        Favorite.create(
           user: User.all.sample,
           restaurant: Restaurant.all.sample
         )
@@ -52,7 +52,7 @@ namespace :dev do
 
   task fake_50likes: :environment do
     50.times do |i|
-        Like.create!(
+        Like.create(
           user: User.all.sample,
           restaurant: Restaurant.all.sample
         )
@@ -62,7 +62,7 @@ namespace :dev do
 
   task fake_20follows: :environment do
     20.times do |i|
-      Followship.create!(
+      Followship.create(
         user: User.all.sample,
         following: User.all.sample
         )

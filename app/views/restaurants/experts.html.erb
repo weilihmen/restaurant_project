@@ -17,8 +17,9 @@
 
 <div class="row">
   <div class="col-lg-4 col-sm-10">
-    <h3>最多留言</h3>
-    <% @most_comments.each do |u| %>
+    <h3>最多追蹤</h3>
+    <% @followships.each do |ff| %>
+    <% u=User.find(ff.following_id) %>
       <div class="experts-block">
         <div class="row">
           <div class="col-lg-6 col-sm-10">
@@ -49,8 +50,8 @@
   </div>
 
     <div class="col-lg-4 col-sm-10">
-    <h3>我的追蹤</h3>
-    <% @your_followings.each do |u| %>
+    <h3>最多留言</h3>
+    <% @most_comments.each do |u| %>
       <div class="experts-block">
         <div class="row">
           <div class="col-lg-6 col-sm-10">
