@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   #留言
   has_many :comments, dependent: :destroy
+  has_many :commented_restaurants, through: :comments, source: :restaurant
   #最愛、收藏
   has_many :favorites, dependent: :destroy
   #透過收藏 取得餐廳 User.restarants

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user=User.find(params[:id])
-		@comments=@user.comments
+		@commented_r=@user.commented_restaurants.uniq
 		@followings=@user.followings
 		@followers=@user.followers
 	end
