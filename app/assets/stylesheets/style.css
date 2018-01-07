@@ -149,6 +149,10 @@ body{
 /* end here */
 /* restaurant show comment */
 
+.z{
+  z-index: 10;
+}
+
 .comments-outter{
 	padding: 20px 100px;
 	background-color: white;
@@ -258,6 +262,18 @@ body{
   bottom: 0px;
   left:0px;
 }
+
+@media (max-width: 991px){
+  .feeds-name{
+  position: relative;
+  padding-top: 10px;
+  }
+  .feeds-name p{
+  display: inline-block;
+  padding-right: 10px;
+  }
+}
+
 .feeds-intro{
   height: 50px;
 }
@@ -299,15 +315,26 @@ body{
   bottom: 0px;
   left:0px;
 }
+
+@media (max-width: 991px){
+  .experts-name{
+  position: relative;
+  padding-top: 10px;
+  }
+  .experts-name p{
+  display: inline-block;
+  padding-right: 10px;
+  }
+}
+
 .experts-intro{
-  height: 50px;
+  padding-left: 5px;
+  padding-top: 10px;
 }
 .experts-intro p{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-left: 5px;
-  padding-top: 10px;
 }
 
 .experts-pic-fit{

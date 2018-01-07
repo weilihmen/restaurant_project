@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="experts-intro">
-          <p><%= u.intro %></p>
+          <p><%= u.intro %><br>粉絲人數：<%= u.followers.size%></p>
         </div>
       </div>
     <% end %> 
@@ -75,10 +75,14 @@
           </div>
         </div>
         <div class="experts-intro">
-          <p><%= u.intro %></p>
+          <p><%= u.intro %><br>留言次數：<%= u.comments.size%></p>
         </div>
       </div>
     <% end %> 
+  </div>
+
+  <div class="col-lg-4 col-sm-10">
+    <h3>最多好友（建置中）</h3>
   </div>
 
 </div>
