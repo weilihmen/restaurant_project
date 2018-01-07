@@ -4,7 +4,7 @@
 		<div class="avatar-width paddint-top-10">
 			<div class="avatar-height">
 				<div class="avatar-position">
-					<%= image_tag(@user.avatar, {class:"avatar-fit"})%>
+					<%= image_tag(@user.avatar, {alt: "image-not-found", onerror:"this.src='/image-not-found.jpg';", class:"avatar-fit"}) %>
 				</div>
 			</div>
 		</div>
