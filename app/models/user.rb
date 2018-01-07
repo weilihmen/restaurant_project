@@ -29,5 +29,8 @@ class User < ApplicationRecord
   def admin?
    	self.role == "admin"
   end
+  def has_following?
+    self.comments.size >0
+  end
 
 end

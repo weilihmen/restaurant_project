@@ -20,6 +20,10 @@ class RestaurantsController < ApplicationController
     @recent_comments = Comment.order(created_at: :desc).limit(10)
     @ranks = Restaurant.order(rank: :desc).limit(10)
   end
+  def experts
+  	@most_comments=User.joins(:comments).group("users.id").order("count(users.id) DESC").limit(5)
+  	@your_followings=current_user.followings
+  end
 
   def like
     @restaurant = Restaurant.find(params[:id])
