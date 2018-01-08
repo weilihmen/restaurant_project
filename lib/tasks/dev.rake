@@ -3,7 +3,7 @@ namespace :dev do
   task fake_50restaurants: :environment do
     Restaurant.destroy_all
 
-    500.times do |i|
+    50.times do |i|
       Restaurant.create(name: FFaker::Name.first_name,
         opening_hours: FFaker::Time.datetime,
         tel: FFaker::PhoneNumber.short_phone_number,
@@ -12,7 +12,7 @@ namespace :dev do
         category: Category.all.sample,
       )
     end
-    puts "created 500 fake restaurants"
+    puts "created 50 fake restaurants"
   end
 
   task fake_20users: :environment do
