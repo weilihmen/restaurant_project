@@ -23,8 +23,7 @@ class RestaurantsController < ApplicationController
   def experts
   	@categories=Category.all
   	@most_comments=User.joins(:comments).group("users.id").order("count(users.id) DESC").limit(10)
-    @followships=Followship.group(:following_id).order("count(user_id) DESC").limit(10)
-
+    @most_followers=User.joins(:followers).group("users.id").order("count(users.id) DESC").limit(10)
   end
 
   def like

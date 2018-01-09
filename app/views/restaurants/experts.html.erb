@@ -18,8 +18,7 @@
 <div class="row">
   <div class="col-lg-4 col-sm-10">
     <h3>最多追蹤</h3>
-    <% @followships.each do |ff| %>
-    <% u=User.find(ff.following_id) %>
+    <% @most_followers.each do |u| %>
       <div class="experts-block">
         <div class="row">
           <div class="col-lg-6 col-sm-10">
