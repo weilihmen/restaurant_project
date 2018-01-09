@@ -70,4 +70,11 @@ namespace :dev do
     puts "create random 20 fake follows"
   end
 
+  task fake_update_rank: :environment do
+    Restaurant.all.each do |r|
+      r.rank_count
+    end
+    puts "update restaurant rank!"
+  end
+
 end
